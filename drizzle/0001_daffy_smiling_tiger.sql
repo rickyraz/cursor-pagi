@@ -1,0 +1,1 @@
+ALTER TABLE "books" ALTER COLUMN "id" SET DATA TYPE text;

@@ -1,15 +1,28 @@
 {
-  "name": "cursor-pagi",
-  "version": "1.0.50",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
-  },
-  "dependencies": {
-    "elysia": "latest"
-  },
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "module": "src/index.js"
+	"name": "cursor-pagi",
+	"version": "1.0.50",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "bun run --watch src/index.ts",
+		"db:migrate": "bun run scripts/migrate.ts",
+		"db:generate": "drizzle-kit generate",
+		"db:push": "drizzle-kit push:pg",
+		"db:studio": "drizzle-kit studio",
+		"db:restore": "bun run scripts/restore.ts"
+	},
+	"dependencies": {
+		"@electric-sql/pglite": "^0.2.13",
+		"@elysiajs/swagger": "^1.1.6",
+		"@libsql/client": "^0.14.0",
+		"drizzle-orm": "^0.36.4",
+		"drizzle-typebox": "^0.1.1",
+		"elysia": "latest",
+		"logixlysia": "^4.0.0",
+		"nanoid": "^5.0.8"
+	},
+	"devDependencies": {
+		"bun-types": "latest",
+		"drizzle-kit": "^0.28.1"
+	},
+	"module": "src/index.js"
 }
